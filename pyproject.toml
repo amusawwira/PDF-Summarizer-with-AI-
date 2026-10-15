@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-summarizer-chatbot"
+version = "2.0.0"
+description = "PDF summarizer and chatbot using Llama via Replicate"
+requires-python = ">=3.9"
+dependencies = [
+    "streamlit>=1.32",
+    "google-genai>=1.0",
+    "pypdf>=4.2",
+    "python-dotenv>=1.0",
+    "tenacity>=8.2",
+]
+
+[project.optional-dependencies]
+ocr = ["pdf2image", "pytesseract", "pdfplumber"]
+replicate = ["replicate>=0.25"]
+rag = ["chromadb", "sentence-transformers"]
+export = ["reportlab"]
+dev = ["pytest", "ruff"]
